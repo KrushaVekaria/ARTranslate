@@ -43,25 +43,25 @@
     		}
     		
     		// Elements for taking the snapshot
-    		var canvas = document.getElementById('canvas');
-    		var context = canvas.getContext('2d');
-    		var video = document.getElementById('videoScreen');
+    		// var canvas = document.getElementById('canvas');
+    		// var context = canvas.getContext('2d');
+    		// var video = document.getElementById('videoScreen');
 
-    		// Trigger photo take
-    		document.getElementById("snap").addEventListener("click", function() {
-    				context.drawImage(video, 0, 0, 640, 480);
-    				context.drawImage(video, 0, 0, 640, 480);
-    		});
+    		// // Trigger photo take
+    		// document.getElementById("snap").addEventListener("click", function() {
+    		// 		context.drawImage(video, 0, 0, 640, 480);
+    		// 		context.drawImage(video, 0, 0, 640, 480);
+    		// });
     		
-    		var videoElement = document.querySelector('video');
-    		 var audioSelect = document.querySelector('select#audioSource');
-    		 var videoSelect = document.querySelector('select#videoSource');
+    		// var videoElement = document.querySelector('video');
+    		//  var audioSelect = document.querySelector('select#audioSource');
+    		//  var videoSelect = document.querySelector('select#videoSource');
 
-    		navigator.mediaDevices.enumerateDevices()
-    		.then(gotDevices).then(getStream).catch(handleError);
+    		// navigator.mediaDevices.enumerateDevices()
+    		// .then(gotDevices).then(getStream).catch(handleError);
 
-    		audioSelect.onchange = getStream;
-    		videoSelect.onchange = getStream;
+    		// audioSelect.onchange = getStream;
+    		// videoSelect.onchange = getStream;
 
     		function gotDevices(deviceInfos) {
     			console.log('DEVICE INFO >>>>>>> ', deviceInfos);
@@ -90,18 +90,18 @@
 				});
 			}
 
-			var constraints = {
-				audio: {
-					deviceId: {exact: audioSelect.value}
-				},
-				video: {
-					deviceId: {exact: videoSelect.value}
-				}
-			};
+			// var constraints = {
+			// 	audio: {
+			// 		deviceId: {exact: audioSelect.value}
+			// 	},
+			// 	video: {
+			// 		deviceId: {exact: videoSelect.value}
+			// 	}
+			// };
 
-			navigator.mediaDevices.getUserMedia(constraints).
-			then(gotStream).catch(handleError);
-			}
+			// navigator.mediaDevices.getUserMedia(constraints).
+			// then(gotStream).catch(handleError);
+			// }
 
 			function gotStream(stream) {
 				window.stream = stream; // make stream available to console
